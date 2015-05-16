@@ -35,6 +35,7 @@ class CajaDAO {
         while ($campos){
             $caja=new Caja($campos->valor_recaudado, $campos->valor_pendiente);
         }
+        return $caja;
     }
     
     public function actualizar(Caja $caja){
