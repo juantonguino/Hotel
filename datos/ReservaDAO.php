@@ -35,7 +35,7 @@ class ReservaDAO {
             $reserva=  new Reserva($campos->fecha_estadia, $campos->nombre, $campos->numero_identificacion, $campos->numero_dias);
             array_push($reservas, $reserva);
         }
-        return$reservas;
+        return $reservas;
     }
     
     public function agregar($numeroHabitacion, Reserva $reserva){

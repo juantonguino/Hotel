@@ -27,15 +27,18 @@ class Huesped {
     
     private $_telefono;
     
+    private $_fechaIngreso;
+    
     //CONTRUCTOR
     
-    private function _construct($_direccion, $_documentoIdentificacion, $_edad, $_nombre, $_numeroNohes, $_telefono){
+    private function _construct($_direccion, $_documentoIdentificacion, $_edad, $_nombre, $_numeroNohes, $_telefono, $_fechaIngreso){
         $this->_direccion=$_direccion;
         $this->_documentoIdentificacion=$_documentoIdentificacion;
         $this->_edad=$_edad;
         $this->_nombre=$_nombre;
         $this->_numeroNohes=$_numeroNohes;
         $this->_telefono=$_telefono;
+        $this->_fechaIngreso=$_fechaIngreso;
     }
     
     //GETTERS AND SETTERS
@@ -87,6 +90,12 @@ class Huesped {
     function set_telefono($_telefono) {
         $this->_telefono = $_telefono;
     }
+    
+    function get_fechaIngreso() {
+        return $this->_fechaIngreso;
+    }
 
-
+    function set_fechaIngreso($_fechaIngreso) {
+        $this->_fechaIngreso = $_fechaIngreso;
+    }
 }
