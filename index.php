@@ -11,7 +11,12 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-            
+            include './datos/CajaDAO.php';
+            $cajaDAO=new CajaDAO();
+            $caja=$cajaDAO->seleccionar();
+            echo $caja->get_valorPendiente();
+            echo "</br>";
+            echo $caja->get_valorRecaudado();
         ?>
     </body>
 </html>
