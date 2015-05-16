@@ -37,7 +37,7 @@ class HuespedDAO {
     }
     
     public function agregar($numeroHabitacion, Huesped $huesped){
-        $sql="call agregar_huesped('".$huesped->get_direccion()."', ".$huesped->get_documentoIdentificacion().", ".$huesped->get_edad().", '".$huesped->get_nombre()."', ".$huesped->get_numeroNohes().", ".$huesped->get_telefono().", ".$numeroHabitacion.",".$huesped->get_fechaIngreso().")";
+        $sql="call agregar_huesped('".$huesped->get_direccion()."', ".$huesped->get_documentoIdentificacion().", ".$huesped->get_edad().", '".$huesped->get_nombre()."', ".$huesped->get_numeroNohes().", ".$huesped->get_telefono().", ".$numeroHabitacion.",'".$huesped->get_fechaIngreso()."')";
         $this->fachadaDB->agregarModificarEliminar($sql);
     }
     
