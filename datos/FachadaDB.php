@@ -48,14 +48,14 @@ class FachadaDB {
         $conexion = mysqli_connect($this->_server, $this->_user, $this->_password, $this->_database);
         return $conexion;
     }
-    public function desconectarDB($conexion){
+    public function desconectarDB(mysqli $conexion){
         mysqli_close($conexion);
     }
     
     //OPERACIONES
     
-    public function consultar($sql){
-        $conexion= $this->conectarDB();
+    public function consultar(String $sql){
+        mysqli:$conexion= $this->conectarDB();
         $consulta = $conexion->query($sql);
         $campos= mysqli_fetch_object($consulta);
         $this->desconectarDB($conexion);
