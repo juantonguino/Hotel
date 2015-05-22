@@ -55,15 +55,18 @@ class FachadaDB {
     //OPERACIONES
     
     public function consultar(String $sql){
-        mysqli:$conexion= $this->conectarDB();
-        $consulta = $conexion->query($sql);
-        $campos= mysqli_fetch_object($consulta);
-        $this->desconectarDB($conexion);
-        return $campos;
+        //$conexion= $this->conectarDB();
+        //$consulta = $conexion->query($sql);
+        //$campos= mysqli_fetch_object($consulta);
+        //$this->desconectarDB($conexion);
+        //return $campos;
+        $conexion=  $this->conectarDB();
+        $resultados=$conexion->query($sql);
+        return $resultados->fe;
     }
     
     public function agregarModificarEliminar($sql){
-        $conexion=  $this->conectarDB();
-        $consulta = mysqli_query($conexion, $sql);
+        //$conexion=  $this->conectarDB();
+        //$consulta = mysqli_query($conexion, $sql);
     }
 }
