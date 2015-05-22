@@ -19,7 +19,7 @@ class ConsumoDAO {
     
     //CONSTRUCTOR
     
-    public function _construct(){
+    public function __construct(){
         $this->fachadaDB=new FachadaDB();
     }
     
@@ -28,10 +28,12 @@ class ConsumoDAO {
     public function seleccionar($numeroHabitacion){
         $cosumos= array();
         $sql="select consumo.fecha, consumo.habitacion_numero, consumo.producto, consumo.valor from consumo, habitacion where habitacion.numero=".$numeroHabitacion." and consumo.habitacion_numero= habitacion.numero order by consumo.fecha desc";
+        $numeroRegistros=$this->fachadaDB->consultaNumeroRegistros($sql);
         $campos= $this->fachadaDB->consultar($sql);
-        while ($campos){
+        while ($numeroRegistros>0){
             $consumo= new Consumo($campos->fecha, $campos->producto, $campos->valor);
             array_push($cosumos, $consumo);
+            $numeroRegistros--;
         }
         return $cosumos;
     }

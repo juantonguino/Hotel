@@ -21,7 +21,7 @@ class ReservaDAO {
     
     //CONSTRUCTOR
     
-    public function _construct(){
+    public function __construct(){
         $this->fachadaDB=new FachadaDB();
     }
     
