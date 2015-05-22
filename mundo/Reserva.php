@@ -25,7 +25,7 @@ class Reserva {
     
     //CONSTRUCTOR
     
-    public function _construct($_fecahaEstadia, $_nombre, $_numeroIdentificacion, $_numeroDias){
+    public function __construct($_fecahaEstadia, $_nombre, $_numeroIdentificacion, $_numeroDias){
         $this->_fechaEstadia=$_fecahaEstadia;
         $this->_nombre=$_nombre;
         $this->_numeroIdentificacion=$_numeroIdentificacion;

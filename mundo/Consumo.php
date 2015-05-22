@@ -23,7 +23,7 @@ class Consumo {
     
     //CONSTRUCTORES
     
-    public function _construct($_fecha, $_producto, $_valor){
+    public function __construct($_fecha, $_producto, $_valor){
         $this->_fecha=$_fecha;
         $this->_producto=$_producto;
         $this->_valor=$_valor;

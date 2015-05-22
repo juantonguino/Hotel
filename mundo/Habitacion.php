@@ -27,7 +27,7 @@ class Habitacion {
     
     //CONSTRUCTOR
     
-    public function _construct($_estado, $_numero, $_precioPorNoche, $_tipo, $_totalValorConsumo){
+    public function __construct($_estado, $_numero, $_precioPorNoche, $_tipo, $_totalValorConsumo){
         $this->_estado=$_estado;
         $this->_numero=$_numero;
         $this->_precioPorNoche=$_precioPorNoche;

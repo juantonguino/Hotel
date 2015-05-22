@@ -31,7 +31,7 @@ class Huesped {
     
     //CONTRUCTOR
     
-    private function _construct($_direccion, $_documentoIdentificacion, $_edad, $_nombre, $_numeroNohes, $_telefono, $_fechaIngreso){
+    private function __construct($_direccion, $_documentoIdentificacion, $_edad, $_nombre, $_numeroNohes, $_telefono, $_fechaIngreso){
         $this->_direccion=$_direccion;
         $this->_documentoIdentificacion=$_documentoIdentificacion;
         $this->_edad=$_edad;
