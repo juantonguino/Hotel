@@ -35,11 +35,11 @@ class FachadaDB {
     
     //CONSTRUCTOR
     
-    public function _construct(){
-        $this->_server= SERVER;
-        $this->_user =USER;
-        $this->_password=PASSWORD;
-        $this->_database=DATABASE;
+    public function __construct(){
+        $this->_server= self::SERVER;
+        $this->_user =self::USER;
+        $this->_password= self::PASSWORD;
+        $this->_database= self::DATABASE;
     }
     
     //CONEXION
@@ -54,7 +54,14 @@ class FachadaDB {
     
     //OPERACIONES
     
-    public function consultar(String $sql){
+    public function consultaNumeroRegistros($sql){
+        $conexion=  $this->conectarDB();
+        $consulta = mysqli_query($conexion, $sql);
+        $numeroRegistros= mysqli_num_rows($consulta);
+        return $numeroRegistros;
+    }
+    
+    public function consultar($sql){
         $conexion= $this->conectarDB();
         $consulta = $conexion->query($sql);
         $campos= mysqli_fetch_object($consulta);

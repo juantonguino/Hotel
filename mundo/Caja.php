@@ -21,7 +21,7 @@ class Caja {
     
     //CONSTRUCTOR;
     
-    public function _construct($_valorRecaudado, $_valorPendiente) {
+    public function __construct($_valorRecaudado, $_valorPendiente) {
         $this->_valorRecaudado=$_valorRecaudado;
         $this->_valorPendiente=$_valorPendiente;
     }
