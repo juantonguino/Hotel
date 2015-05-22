@@ -11,13 +11,10 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-            include 'datos/CajaDAO.php';
-            include 'mundo/Caja.php';
-            $cajaDAO=new CajaDAO();
-            $caja=$cajaDAO->seleccionar();
-            echo $caja->get_valorPendiente();
-            echo "</br>";
-            echo $caja->get_valorRecaudado();
+            include 'datos/ConsumoDAO.php';
+            include 'mundo/Consumo.php';
+            $consumoDAO=new ConsumoDAO();
+            $consumo= $consumoDAO->seleccionar(101);
         ?>
     </body>
 </html>

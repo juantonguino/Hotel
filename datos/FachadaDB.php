@@ -45,7 +45,7 @@ class FachadaDB {
     //CONEXION
     
     public function conectarDB(){
-        $conexion = mysqli_connect($this->_server, $this->_user, $this->_password, $this->_database);
+        $conexion = new mysqli($this->_server, $this->_user, $this->_password, $this->_database);
         return $conexion;
     }
     public function desconectarDB(mysqli $conexion){
@@ -64,9 +64,9 @@ class FachadaDB {
     public function consultar($sql){
         $conexion= $this->conectarDB();
         $consulta = $conexion->query($sql);
-        $campos= mysqli_fetch_object($consulta);
-        $this->desconectarDB($conexion);
-        return $campos;
+        $registros=array();
+        while ($registros[]=$consulta->fetch_assoc());
+        return $registros;
     }
     
     public function agregarModificarEliminar($sql){

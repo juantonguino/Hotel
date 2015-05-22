@@ -5,7 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+include_once 'FachadaDB.php';
 /**
  * Description of ConsumoDAO
  *
@@ -29,11 +29,10 @@ class ConsumoDAO {
         $cosumos= array();
         $sql="select consumo.fecha, consumo.habitacion_numero, consumo.producto, consumo.valor from consumo, habitacion where habitacion.numero=".$numeroHabitacion." and consumo.habitacion_numero= habitacion.numero order by consumo.fecha desc";
         $numeroRegistros=$this->fachadaDB->consultaNumeroRegistros($sql);
-        $campos= $this->fachadaDB->consultar($sql);
-        while ($numeroRegistros>0){
-            $consumo= new Consumo($campos->fecha, $campos->producto, $campos->valor);
+        $registros= $this->fachadaDB->consultar($sql);
+        for($i=0;$i<$numeroRegistros;$i++){
+            $consumo= new Consumo($registros[$i]['fecha'], $registros[$i]['producto'], $registros[$i]['valor']);
             array_push($cosumos, $consumo);
-            $numeroRegistros--;
         }
         return $cosumos;
     }
