@@ -12,9 +12,11 @@ and open the template in the editor.
     <body>
         <?php
             include 'datos/CajaDAO.php';
-            include 'mundo/Caja.php';
-            $cajaDAO=new CajaDAO();
-            $caja= $cajaDAO->seleccionar();
+            include 'mundo/Hotel.php';
+            $mundo= Hotel::get_isntancia();
+            if($mundo!=null){
+                echo 'se ha creado el mundo';
+            }
         ?>
     </body>
 </html>

@@ -5,7 +5,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+include_once 'Caja.php';
+include_once 'datos/HabitacionDAO.php';
 /**
  * Description of Hotel
  *
@@ -23,7 +24,7 @@ class Hotel {
     
     private $_habitacionDAO;
     
-    private $_instancia;
+    private static $_instancia;
     
     //CONSTRUCTOR
     
@@ -52,10 +53,10 @@ class Hotel {
     //SINGLETON
     
     public static function get_isntancia(){
-        if($this->_instancia==null){
-            $this->_instancia=new Hotel();
+        if(!isset(self::$_instancia)){
+            self::$_instancia= new Hotel();
         }
-        return $this->_instancia;
+        return self::$_instancia;
     }
 
 

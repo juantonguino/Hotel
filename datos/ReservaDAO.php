@@ -5,9 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-include '../mundo/Reserva.php';
-
+include_once 'FachadaDB.php';
 /**
  * Description of ReservaDAO
  *
