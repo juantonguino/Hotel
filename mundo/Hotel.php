@@ -32,8 +32,23 @@ class Hotel {
         $this->_habitaciones=array();
         $this->_cajaDAO= new CajaDAO();
         $this->_habitacionDAO= new HabitacionDAO();
+        $this->cargarInformacion();
     }
     
+    //CARGA DE DATOS
+    
+    private function cargarInformacion(){
+        $this->_caja=$this->_cajaDAO->seleccionar();
+        $this->_habitaciones=$this->_habitacionDAO->seleccionar();
+        $numeroHabitaciones=  sizeof($this->_habitaciones);
+        for($i=0;$i<$numeroHabitaciones;$i++){
+            $miHabitacion= $this->_habitaciones[$i];
+            $miHabitacion->set_huespedes($miHabitacion->get_huespedDAO()->seleccionar($miHabitacion->get_numero()));
+            $miHabitacion->set_consumos($miHabitacion->get_consumoDAO()->seleccionar($miHabitacion->get_numero()));
+            $miHabitacion->set_reservas($miHabitacion->get_reservaDAO()->seleccionar($miHabitacion->get_numero()));
+        }
+    }
+
     //SINGLETON
     
     public static function get_isntancia(){
