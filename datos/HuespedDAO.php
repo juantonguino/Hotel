@@ -28,9 +28,10 @@ class HuespedDAO {
     public function seleccionar($numeroHabitacion){
         $huespedes=array();
         $sql="select huesped.* from huesped where huesped.habitacion_numero=".$numeroHabitacion." order by huesped.nombre asc;";
-        $campos= $this->fachadaDB->consultar($sql);
-        while($campos){
-            $huesped= new Huesped($campos->direccion, $campos->documento_identificacion, $campos->edad, $campos->nombre, $campos->numero_noches, $campos->telefono, $campos->fecha_ingreso);
+        $numeroRegistros=$this->fachadaDB->consultaNumeroRegistros($sql);
+        $registros= $this->fachadaDB->consultar($sql);
+        for($i=0;$i<$numeroRegistros;$i++){
+            $huesped= new Huesped($registros[$i]['direccion'], $registros[$i]['documento_identificacion'], $registros[$i]['edad'], $registros[$i]['nombre'], $registros[$i]['numero_noches'], $registros[$i]['telefono'], $registros[$i]['fecha_ingreso']);
             array_push($huespedes, $huesped);
         }
         return $huespedes;

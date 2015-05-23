@@ -30,9 +30,10 @@ class ReservaDAO {
     public function seleccionar($numeroHabitacion){
         $reservas=array();
         $sql= "select reserva.* from reserva where reserva.habitacion_numero= ".$numeroHabitacion." order by reserva.fecha_estadia desc";
-        $campos= $this->fachadaDB->consultar($sql);
-        while ($campos){
-            $reserva=  new Reserva($campos->fecha_estadia, $campos->nombre, $campos->numero_identificacion, $campos->numero_dias);
+        $numeroRegistros=$this->fachadaDB->consultaNumeroRegistros($sql);
+        $registros= $this->fachadaDB->consultar($sql);
+        for($i=0;$i<$numeroRegistros;$i++){
+            $reserva=  new Reserva($registros[$i]['fecha_estadia'], $registros[$i]['nombre'], $registros[$i]['numero_identificacion'], $registros[$i]['numero_dias']);
             array_push($reservas, $reserva);
         }
         return $reservas;
