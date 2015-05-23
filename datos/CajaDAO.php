@@ -29,10 +29,9 @@ class CajaDAO {
         $caja;
         $sql= "select caja.valor_pendiente, caja.valor_recaudado from caja";
         $numeroRegistros=$this->fachadaDB->consultaNumeroRegistros($sql);
-        $campos= $this->fachadaDB->consultar($sql);
-        while ($numeroRegistros>0){
-            $caja=new Caja($campos->valor_recaudado, $campos->valor_pendiente);
-            $numeroRegistros--;
+        $registros= $this->fachadaDB->consultar($sql);
+        for($i=0;$i<$numeroRegistros;$i++){
+            $caja=new Caja($registros[$i]['valor_recaudado'], $registros[$i]['valor_pendiente']);
         }
         return $caja;
     }
