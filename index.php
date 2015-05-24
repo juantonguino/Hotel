@@ -13,6 +13,7 @@ and open the template in the editor.
         <?php
             include 'mundo/Hotel.php';
             $mundo= Hotel::get_isntancia();
+            echo 'cambio ojeda';
         ?>
     </body>
 </html>
