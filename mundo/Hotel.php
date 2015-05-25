@@ -105,7 +105,7 @@ class Hotel {
         $habitacion->get_reservaDAO()->agregar($numeroHabitacion, $reserva);
     }
     
-    public function eliminarReserva(){
+    public function eliminarReserva($numeroHabitacion, $reserva){
         
     }
     
