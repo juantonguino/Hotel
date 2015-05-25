@@ -25,7 +25,9 @@ class UsuariosDAO {
     
     //OPERACIONES
     
-    public function verificarUsuarioRegistrado(){
-        $sql="SELECT * FROM hotel.usuario where ";
+    public function verificarUsuarioRegistrado($username,$password){
+        $sql="SELECT * FROM hotel.usuario where usuario.idusuario='".$username."' and usuario.password='".$password."';";
+        $registros=$this->fachadaDB->consultaNumeroRegistros($sql);
+        return $registros;
     }
 }
