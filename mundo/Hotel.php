@@ -94,4 +94,50 @@ class Hotel {
     function set_habitacionDAO($_habitacionDAO) {
         $this->_habitacionDAO = $_habitacionDAO;
     }
+    
+    //REQUERIMIENTOS
+    
+    public function agregarReserva($numeroHabitacion, $reserva){
+        
+    }
+    
+    public function eliminarReserva(){
+        
+    }
+    
+    public function agregarHuesped(){
+        
+    }
+    
+    public function buscarHabitacionPorNumero($numeo){
+        
+    }
+    
+    public function realizarCheckOut($numero){
+        
+    }
+    
+    public function agregarConsumo($numeroHabitacion, $consumo){
+        
+    }
+    
+    public function buscarReserva($nombre){
+        
+    }
+    
+    public function eliminarHesped($numeroHabitacion, $idententificacion){
+        
+    }
+    
+    public function buacarHuesped($nombre){
+        
+    }
+    
+    public function bucarHabitacionPorDisponibilidad($fecha){
+        
+    }
+    
+    public function buscarHabitacionPorTipo($tipo){
+        
+    }
 }
