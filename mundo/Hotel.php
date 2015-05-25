@@ -8,6 +8,7 @@
 include_once 'Caja.php';
 include_once 'datos/HabitacionDAO.php';
 include_once 'datos/CajaDAO.php';
+include_once 'Habitacion.php';
 /**
  * Description of Hotel
  *
@@ -98,7 +99,10 @@ class Hotel {
     //REQUERIMIENTOS
     
     public function agregarReserva($numeroHabitacion, $reserva){
-        
+        $habitacion= $this->buscarHabitacionPorNumero($numeroHabitacion);
+        $reservas=$habitacion.get_reservas();
+        array_push($reservas, $reserva);
+        $habitacion->get_reservaDAO()->agregar($numeroHabitacion, $reserva);
     }
     
     public function eliminarReserva(){
@@ -109,8 +113,16 @@ class Hotel {
         
     }
     
-    public function buscarHabitacionPorNumero($numeo){
-        
+    public function buscarHabitacionPorNumero($numero){
+        $retorno=null;
+        $numeroH= sizeof($this->_habitaciones);
+        for($i=0;$i<$$numeroH;$i++){
+            $temporal=  $this->_habitaciones[$i];
+            if($temporal->get_numero()==$numero){
+                $retorno= $temporal;
+            }
+        }
+        return $retorno;
     }
     
     public function realizarCheckOut($numero){
