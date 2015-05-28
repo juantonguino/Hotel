@@ -166,7 +166,7 @@ class Hotel {
         }
     }
     
-    public function agregarConsumo($numeroHabitacion, Consumo $consumo, Habitacion $buscada){
+    public function agregarConsumo($numeroHabitacion, Consumo $consumo){
         $buscada=  $this->buscarHabitacionPorNumero($numeroHabitacion);
         if($buscada!=null){
             $listaConsumos= $buscada->get_consumos();
