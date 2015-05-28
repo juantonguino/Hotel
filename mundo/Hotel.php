@@ -178,7 +178,7 @@ class Hotel {
         
     }
     
-    public function buacarHuesped($nombre){
+    public function buscarHuesped($nombre){
         
     }
     
