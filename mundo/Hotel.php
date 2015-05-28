@@ -166,8 +166,18 @@ class Hotel {
         }
     }
     
-    public function agregarConsumo($numeroHabitacion, $consumo){
-        
+    public function agregarConsumo($numeroHabitacion, Consumo $consumo, Habitacion $buscada){
+        $buscada=  $this->buscarHabitacionPorNumero($numeroHabitacion);
+        if($buscada!=null){
+            $listaConsumos= $buscada->get_consumos();
+            array_push($listaConsumos,$consumo);
+            $buscada->set_totalValorConsumo($buscada->get_totalValorConsumo()+$consumo->get_valor());
+            $this->_caja->set_valorPendiente($this->_caja->get_valorPendiente()+$consumo->get_valor());
+            
+            $this->_habitacionDAO->actualizar($buscada);
+            $buscada->get_consumoDAO()->agregar($buscada->get_numero(), $consumo);
+            $this->_cajaDAO->actualizar($this->_caja);
+        }
     }
     
     public function buscarReserva($nombre){
