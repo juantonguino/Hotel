@@ -138,7 +138,7 @@ class Hotel {
         return $retorno;
     }
     
-    public function realizarCheckOut($numero, Habitacion $buscada, Huesped $huesped){
+    public function realizarCheckOut($numero){
         $buscada=  $this->buscarHabitacionPorNumero($numero);
         if($buscada!=null){
             $this->_caja->set_valorRecaudado($buscada->get_totalValorConsumo()+$this->_caja->get_valorRecaudado());
