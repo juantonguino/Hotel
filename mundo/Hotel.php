@@ -109,7 +109,7 @@ class Hotel {
         
     }
     
-    public function agregarHuesped($numeroHabitacion, Huesped $huesped, Habitacion $buscada){
+    public function agregarHuesped($numeroHabitacion, Huesped $huesped){
         $buscada=  $this->buscarHabitacionPorNumero($numeroHabitacion);
         if($buscada!=null){
             $listaHuespedes=$buscada->get_huespedes();
@@ -138,8 +138,32 @@ class Hotel {
         return $retorno;
     }
     
-    public function realizarCheckOut($numero){
-        
+    public function realizarCheckOut($numero, Habitacion $buscada, Huesped $huesped){
+        $buscada=  $this->buscarHabitacionPorNumero($numero);
+        if($buscada!=null){
+            $this->_caja->set_valorRecaudado($buscada->get_totalValorConsumo()+$this->_caja->get_valorRecaudado());
+            $this->_caja->set_valorPendiente( $this->_caja->get_valorPendiente()-$buscada->get_totalValorConsumo());
+            $buscada->set_totalValorConsumo(0);
+            $buscada->set_estado("Desocupada");
+            
+            $this->_cajaDAO->actualizar($this->_caja);
+            $this->_habitacionDAO->actualizar($buscada);
+            
+            $listaHuespedes= $buscada->get_huespedes();
+            for($i=0;$i<sizeof($listaHuespedes);$i++){
+                $huesped=$listaHuespedes[$i];
+                $buscada->get_huespedDAO()->borrar($buscada->get_numero(), $huesped);
+            }
+            
+            $listaConsumos= $buscada->get_consumos();
+            for($i=0;$i<sizeof($listaConsumos);$i++){
+                $consumo=$listaConsumos[$i];
+                $buscada->get_consumoDAO()->borrar($buscada->get_numero(), $consumo);
+            }
+            
+            $buscada->set_consumos(array());
+            $buscada->set_huespedes(array());
+        }
     }
     
     public function agregarConsumo($numeroHabitacion, $consumo){
