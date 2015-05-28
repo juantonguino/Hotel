@@ -1,21 +1,23 @@
 <?php
-	$error="&nbsp;";
-	if(isset($_POST['op']))
-	{
-		$mail=strtolower($_POST['mail']);
-		$contra=$_POST['con'];
-		
-		if($mail=="hotel@umariana.com" && $contra=="123")
-		{
-			session_start();
-			$_SESSION['email'][0]="hotel@umariana.com";
-			$_SESSION['contra'][0]="123";
-			                        
-			header('Location:login.php');
-		}else{
-			$error="* Usuario no autorizado!";
-		}	
-	}
+
+include_once 'datos/UsuariosDAO.php';;
+$usuarioDAO =new UsuariosDAO();
+$error="&nbsp;";
+if(isset($_POST['op']))
+{
+    $mail=$_POST['mail'];
+    $contra=$_POST['con'];
+    
+    $verificacion=$usuarioDAO->verificarUsuarioRegistrado($mail, $contra);
+    if($verificacion == 1)
+    {                     
+        header('Location:login.php');
+    }
+    else
+    {
+        $error="* Usuario no autorizado!";
+    }	
+}
 ?>
 <!DOCTYPE html>
 <!--
@@ -39,7 +41,7 @@ and open the template in the editor.
     <fieldset>
 
       <form action="" method="POST">
-        <input name="mail" type="email" required placeholder="Correo Electronico">
+          <input name="mail" type="text" required placeholder="Usuario">
         <input name="con" type="password" required  placeholder="Contraseña">
         <input type="submit" name="op" value="Entrar">
         <footer class="clearfix">            
