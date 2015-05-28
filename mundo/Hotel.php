@@ -109,8 +109,21 @@ class Hotel {
         
     }
     
-    public function agregarHuesped(){
-        
+    public function agregarHuesped($numeroHabitacion, Huesped $huesped, Habitacion $buscada){
+        $buscada=  $this->buscarHabitacionPorNumero($numeroHabitacion);
+        if($buscada!=null){
+            $listaHuespedes=$buscada->get_huespedes();
+            if(sizeof($listaHuespedes)==0){
+                $buscada->set_estado("Ocupada");
+                $ingresar= $buscada->get_precioPorNoche()+$buscada->get_totalValorConsumo();
+                $buscada->set_totalValorConsumo($ingresar);
+                $this->_caja->set_valorPendiente($this->_caja->get_valorPendiente()+$buscada->get_precioPorNoche());
+            }
+            array_push($listaHuespedes, $huesped);
+            $this->_habitacionDAO->actualizar($buscada);
+            $buscada->get_huespedDAO()->agregar($buscada->get_numero(), $huesped);
+            $this->_cajaDAO->actualizar($this->_caja);
+        }		
     }
     
     public function buscarHabitacionPorNumero($numero){
