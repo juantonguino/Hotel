@@ -105,8 +105,23 @@ class Hotel {
         $habitacion->get_reservaDAO()->agregar($numeroHabitacion, $reserva);
     }
     
-    public function eliminarReserva($numeroHabitacion, $reserva){
-        
+    public function eliminarReserva($numeroHabitacion, Reserva $reserva){
+        $buscada=  $this->buscarHabitacionPorNumero($numeroHabitacion);
+        if($buscada!=null){
+            $listaReservas=$buscada->get_reservas();
+            for($i=0;$i<sizeof($listaReservas);$i++){
+                $temporal= $listaReservas[$i];
+                if($reserva->get_fecahaEstadia()==$temporal->get_fecahaEstadia()&&
+                   $reserva->get_nombre()==$temporal->get_nombre()&&
+                   $reserva->get_numeroDias()==$temporal->get_numeroDias()&&
+                   $reserva->get_numeroIdentificacion()==$temporal->get_numeroIdentificacion()){
+                   
+                    $buscada->get_reservaDAO()->borrar($buscada->get_numero(), $temporal);
+                    unset($listaReservas[$i]);
+                    $buscada->set_reservas(array_values($listaReservas));
+                }
+            }
+        }
     }
     
     public function agregarHuesped($numeroHabitacion, Huesped $huesped){
