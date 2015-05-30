@@ -211,7 +211,18 @@ class Hotel {
     }
     
     public function eliminarHesped($numeroHabitacion, $idententificacion){
-        
+        $buscada=  $this->buscarHabitacionPorNumero($numeroHabitacion);
+        if($buscada!=null){
+            $listaHuespedes=$buscada->get_huespedes();
+            for($i=0;$i<sizeof($listaHuespedes);$i++){
+                $temporal= $listaHuespedes[$i];
+                if($temporal->get_documentoIdentificacion()==$idententificacion){
+                    $buscada->get_huespedDAO()->borrar($buscada->get_numero(), $temporal);
+                    unset($listaHuespedes[$i]);
+                    $buscada->set_reservas(array_values($listaHuespedes));
+                }
+            }
+        }
     }
     
     public function buscarHuesped($nombre){
