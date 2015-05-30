@@ -195,8 +195,19 @@ class Hotel {
         }
     }
     
-    public function buscarReserva($nombre){
-        
+    public function buscarReserva($nombre, Reserva $miReserva){
+        $retorno=array();
+        for($i=0;$i<sizeof($this->_habitaciones);$i++){
+            $miHabitacion=$this->_habitaciones[$i];
+            $reservas=$miHabitacion->get_reservas();
+            for($j=0;$j<sizeof($this->_habitaciones);$j++){
+                $miReserva=$reservas[j];
+                if($miReserva->get_nombre()==$nombre){
+                    array_push($retorno, $miHabitacion);
+                }
+            }
+        }
+        return $retorno;
     }
     
     public function eliminarHesped($numeroHabitacion, $idententificacion){
