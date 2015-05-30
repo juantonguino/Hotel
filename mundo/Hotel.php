@@ -214,8 +214,32 @@ class Hotel {
         
     }
     
-    public function buscarHuesped($nombre){
-        
+    public function buscarHuesped($nombre, Habitacion $miHabitacion, Huesped $miHuesped, Huesped $miHuesped){
+       $retorno=array();
+       for($i=0;$i<sizeof($this->_habitaciones);$i++){
+           $miHabitacion=$this->_habitaciones[$i];
+           $huespedes= $miHabitacion->get_huespedes();
+           for($j=0;$j<sizeof($huespedes);$j++){
+               
+           }
+       }
+       return $retorno;
+        ArrayList retorno= new ArrayList();
+		for(int i=0;i<habitaciones.size();i++)
+		{
+			Habitacion habitacion=habitaciones.get(i);
+			ArrayList<Huesped> huespedes= habitaciones.get(i).darHuespedes();
+			for(int j=0;j<huespedes.size();j++)
+			{
+				Huesped h= huespedes.get(j);
+				if(h.darNombre().equals(nNombre))
+				{
+					retorno.add(h);
+					retorno.add(habitacion);
+				}
+			}
+		}
+		return retorno;
     }
     
     public function bucarHabitacionPorDisponibilidad($fecha){
