@@ -233,11 +233,11 @@ class Hotel {
         
     }
     
-    public function buscarHabitacionPorTipo($tipo, Habitacion $miHabitacion){
+    public function buscarHabitacionPorTipo($tipo){
         $retorno= array();
         for($i=0;$i<sizeof($this->_habitaciones);$i++){
             $miHabitacion=$this->_habitaciones[$i];
-            if($miHabitacion->get_estado()&&$miHabitacion->get_tipo()){
+            if($miHabitacion->get_estado()==Habitacion::ESTADO_DISPONIBLE&&$miHabitacion->get_tipo()==$tipo){
                 array_push($retorno, $miHabitacion);
             }
         }
