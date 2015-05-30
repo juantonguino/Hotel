@@ -15,6 +15,18 @@ include_once 'datos/HuespedDAO.php';
  */
 class Habitacion {
     
+    //constantes
+    
+    const TIPO_SENCILLA="sencilla";
+    
+    const TIPO_DOBLE="doble";
+    
+    const TIPO_TRIPLE="triple";
+    
+    const ESTADO_OCUPADA="Ocupada";
+    
+    const ESTADO_DISPONIBLE="Disponible";
+
     //ATRIBUTOS
     
     private $_estado;

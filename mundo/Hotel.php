@@ -129,7 +129,7 @@ class Hotel {
         if($buscada!=null){
             $listaHuespedes=$buscada->get_huespedes();
             if(sizeof($listaHuespedes)==0){
-                $buscada->set_estado("Ocupada");
+                $buscada->set_estado(Habitacion::ESTADO_OCUPADA);
                 $ingresar= $buscada->get_precioPorNoche()+$buscada->get_totalValorConsumo();
                 $buscada->set_totalValorConsumo($ingresar);
                 $this->_caja->set_valorPendiente($this->_caja->get_valorPendiente()+$buscada->get_precioPorNoche());
@@ -159,7 +159,7 @@ class Hotel {
             $this->_caja->set_valorRecaudado($buscada->get_totalValorConsumo()+$this->_caja->get_valorRecaudado());
             $this->_caja->set_valorPendiente( $this->_caja->get_valorPendiente()-$buscada->get_totalValorConsumo());
             $buscada->set_totalValorConsumo(0);
-            $buscada->set_estado("Desocupada");
+            $buscada->set_estado(Habitacion::ESTADO_DISPONIBLE);
             
             $this->_cajaDAO->actualizar($this->_caja);
             $this->_habitacionDAO->actualizar($buscada);
@@ -214,39 +214,33 @@ class Hotel {
         
     }
     
-    public function buscarHuesped($nombre, Habitacion $miHabitacion, Huesped $miHuesped, Huesped $miHuesped){
+    public function buscarHuesped($nombre){
        $retorno=array();
        for($i=0;$i<sizeof($this->_habitaciones);$i++){
            $miHabitacion=$this->_habitaciones[$i];
            $huespedes= $miHabitacion->get_huespedes();
            for($j=0;$j<sizeof($huespedes);$j++){
-               
+               $miHuesped= $huespedes[$j];
+               if($miHuesped->get_nombre()==$nombre){
+                   array_push($retorno, $miHabitacion);
+               }
            }
        }
        return $retorno;
-        ArrayList retorno= new ArrayList();
-		for(int i=0;i<habitaciones.size();i++)
-		{
-			Habitacion habitacion=habitaciones.get(i);
-			ArrayList<Huesped> huespedes= habitaciones.get(i).darHuespedes();
-			for(int j=0;j<huespedes.size();j++)
-			{
-				Huesped h= huespedes.get(j);
-				if(h.darNombre().equals(nNombre))
-				{
-					retorno.add(h);
-					retorno.add(habitacion);
-				}
-			}
-		}
-		return retorno;
     }
     
     public function bucarHabitacionPorDisponibilidad($fecha){
         
     }
     
-    public function buscarHabitacionPorTipo($tipo){
-        
+    public function buscarHabitacionPorTipo($tipo, Habitacion $miHabitacion){
+        $retorno= array();
+        for($i=0;$i<sizeof($this->_habitaciones);$i++){
+            $miHabitacion=$this->_habitaciones[$i];
+            if($miHabitacion->get_estado()&&$miHabitacion->get_tipo()){
+                array_push($retorno, $miHabitacion);
+            }
+        }
+        return $retorno;
     }
 }
