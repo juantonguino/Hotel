@@ -16,6 +16,10 @@ include_once 'Habitacion.php';
  */
 class Hotel {
     
+    //CONSTANTES
+    
+    const FORMATO_FECHA="";
+    
     //ATRIBUTOS
     
     private $_caja;
