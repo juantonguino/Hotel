@@ -245,7 +245,13 @@ class Hotel {
     }
     
     public function bucarHabitacionPorDisponibilidad($fecha){
-        
+        $retorno=array();
+        $habitacionesNmero=$this->_habitacionDAO->seleccionarHabitacionesDisponibles($fecha);
+        for($i=0;$i<sizeof($habitacionesNmero);$i++){
+            $habitacion=  $this->buscarHabitacionPorNumero($habitacionesNmero[$i]);
+            array_push($retorno, $habitacion);
+        }
+        return $retorno;
     }
     
     public function buscarHabitacionPorTipo($tipo){

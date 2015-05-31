@@ -38,6 +38,19 @@ class HabitacionDAO {
         return $habitaciones;
     }
     
+    public function seleccionarHabitacionesDisponibles($fecha){
+        $habitacionesNumero= array();
+        $sql="SELECT habitacion.* FROM habitacion, reserva WHERE '".$fecha."'<reserva.fecha_estadia and '".$fecha."'>DATE_ADD(reserva.fecha_estadia, INTERVAL reserva.numero_dias DAY) and reserva.habitacion_numero=habitacion.numero;";
+        $numeroRegistros=$this->fachadaDB->consultaNumeroRegistros($sql);
+        $registros= $this->fachadaDB->consultar($sql);
+        for($i=0;$i<$numeroRegistros;$i++){
+            $numero=$registros[$i]['numero'];
+            array_push($habitacionesNumero, $numero);
+        }
+        return $habitacionesNumero;
+    }
+
+
     public function actualizar(Habitacion $habitacion){
         $sql="call actualizar_habitacion(".$habitacion->get_estado().",".$habitacion->get_numero().",".$habitacion->get_totalValorConsumo().")";
         $this->fachadaDB->agregarModificarEliminar($sql);
