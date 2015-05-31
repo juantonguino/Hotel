@@ -5,10 +5,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-include_once 'Caja.php';
+include_once '../mundo/Caja.php';
 include_once '../datos/HabitacionDAO.php';
 include_once '../datos/CajaDAO.php';
-include_once 'Habitacion.php';
+include_once '../mundo/Habitacion.php';
 /**
  * Description of Hotel
  *

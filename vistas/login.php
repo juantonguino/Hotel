@@ -30,7 +30,7 @@ $listaHabitaciones=$mundo->get_habitaciones();
 		</tr>
 	</thead>
 	<tbody>
-<?php for($i=0;$i<sizeof($listaHabitaciones);$i++){ $habitacion= new Habitacion(); $habitacion=$listaHabitaciones[$i]?>
+<?php for($i=0;$i<sizeof($listaHabitaciones);$i++){ $habitacion=$listaHabitaciones[$i];?>
             <tr>
                 <td><?php echo $habitacion->get_numero();?></td>
                 <td><?php echo $habitacion->get_estado()?></td>
