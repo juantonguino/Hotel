@@ -11,7 +11,7 @@ if(isset($_POST['op']))
     $verificacion=$usuarioDAO->verificarUsuarioRegistrado($mail, $contra);
     if($verificacion == 1)
     {                     
-        header('Location:login.php');
+        header('Location:vistas/login.php');
     }
     else
     {
