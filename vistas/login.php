@@ -1,5 +1,6 @@
 <?php session_start();
  include_once '../mundo/Hotel.php';
+//$mundo= new Hotel();
 $mundo= Hotel::get_isntancia();
 $listaHabitaciones=$mundo->get_habitaciones();
 ?>
@@ -39,6 +40,12 @@ $listaHabitaciones=$mundo->get_habitaciones();
                 <td><?php echo $habitacion->get_totalValorConsumo();?></td>
             </tr>
 <?php } ?>
+            <tr>
+                <td colspan="6">Total Recaudado: <?php echo $mundo->get_caja()->get_valorRecaudado();?></td>
+            </tr>
+            <tr>
+                <td colspan="6">Total Pendiente: <?php echo $mundo->get_caja()->get_valorPendiente();?></td>
+            </tr>
             <tr>
                 <td colspan="6"><h6><a href="logout.php">Salir</a></h6></td>
             </tr>
