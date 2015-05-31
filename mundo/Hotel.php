@@ -7,7 +7,7 @@
  */
 include_once 'Caja.php';
 include_once '../datos/HabitacionDAO.php';
-include_once 'datos/CajaDAO.php';
+include_once '../datos/CajaDAO.php';
 include_once 'Habitacion.php';
 /**
  * Description of Hotel
