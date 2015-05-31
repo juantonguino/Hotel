@@ -18,7 +18,7 @@ class Hotel {
     
     //CONSTANTES
     
-    const FORMATO_FECHA="";
+    const FORMATO_FECHA="yyyy-mm-dd";
     
     //ATRIBUTOS
     
