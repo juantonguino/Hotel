@@ -14,7 +14,7 @@
 <table>
 	<thead>
 		<tr>
-			<th colspan="8"><i class="fa fa-user"></i> HUESPEDES</th>
+			<th colspan="8"><i class="hues"></i> HUESPEDES</th>
 		</tr>
 		<tr>
 			<td colspan="8"><h6><a href="agregar_huesped.php">AGREGAR HUESPEDES</a></h6></td>

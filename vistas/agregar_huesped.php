@@ -23,7 +23,7 @@ if(isset($_POST['op']))
 <table>
 	<thead>
 		<tr>
-			<th colspan="2"><i class="fa fa-user"></i> AGREGAR HUESPED </th>
+			<th colspan="2"><i class="hues"></i> AGREGAR HUESPED </th>
 		</tr>
 	</thead>
 	<tbody>

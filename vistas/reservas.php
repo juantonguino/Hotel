@@ -14,7 +14,7 @@
 <table>
 	<thead>
 		<tr>
-			<th colspan="7"><i class="fa fa-user"></i> RESERVAS</th>
+			<th colspan="7"><i class="res"></i> RESERVAS</th>
 		</tr>
 		<tr>
                     <td colspan="7"><h6><a href="agregar_reserva.php">AGREGAR RESERVA</a></h6></td>

@@ -15,7 +15,7 @@
 		</tr>
 		<tr>
 			<td><a href="huespedes.php"><img src="../img/huespedes.jpg" height="100" width="100"></a></td>
-                        <td><a href="consumos.php"><img src="../img/consumos.png" height="100" width="100"></a></td>
+                        <td><a href="consumos.php"><img src="../img/consumos.jpg" height="100" width="100"></a></td>
 			<td><a href="reservas.php"><img src="../img/reservas.jpg" height="100" width="100"></a></td>
 			
 		</tr>

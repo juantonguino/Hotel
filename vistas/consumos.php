@@ -14,7 +14,7 @@
 <table>
 	<thead>
 		<tr>
-			<th colspan="5"><i class="fa fa-user"></i> CONSUMOS</th>
+			<th colspan="5"><i class="cons"></i> CONSUMOS</th>
 		</tr>
 		<tr>
 			<td colspan="5"><h6><a href="agregar_consumo.php">AGREGAR CONSUMOS</a></h6></td>

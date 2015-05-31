@@ -23,7 +23,7 @@ if(isset($_POST['op']))
 <table>
 	<thead>
 		<tr>
-			<th colspan="2"><i class="fa fa-user"></i> AGREGAR RESERVA </th>
+			<th colspan="2"><i class="res"></i> AGREGAR RESERVA </th>
 		</tr>
 	</thead>
 	<tbody>

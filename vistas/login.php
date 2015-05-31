@@ -17,17 +17,20 @@ $listaHabitaciones=$mundo->get_habitaciones();
 <table>
 	<thead>
 		<tr>
-			<th colspan="6"><i class="fa fa-user"></i>HABITACIONES</th>
+			<th colspan="6"><i class="hab"></i>HABITACIONES</th>
 		</tr>
 		<tr>
-                    <td colspan="6"><h6><a href="agregar_habitacion.php">AGREGAR HABITACIONES</a></h6></td>
-		</tr>
-		<tr>
-			<td>Numero</td>
-			<td>Estado</td>
-                        <td>Tipo</td>
-                        <td>Precio</td>
-                        <td>Total</td>                        
+                <td BGCOLOR="#D8D8D8" colspan="6">Total de Dinero Recaudado: <?php echo $mundo->get_caja()->get_valorRecaudado();?></td>
+            </tr>
+            <tr>
+                <td BGCOLOR="#D8D8D8" colspan="6">Total de Dinero Pendiente: <?php echo $mundo->get_caja()->get_valorPendiente();?></td>
+            </tr>
+		<tr>                        
+                    <td><h8><a></a>Numero</h8></td>
+                    <td><h8><a></a>Estado</h8></td>
+		    <td><h8><a></a>tipo</h8></td>
+                    <td><h8><a></a>Precio</h8></td>
+                    <td><h8><a></a>Total</h8></td>  
 		</tr>
 	</thead>
 	<tbody>
@@ -38,25 +41,15 @@ $listaHabitaciones=$mundo->get_habitaciones();
                 <td><?php echo $habitacion->get_tipo();?></td>
                 <td><?php echo $habitacion->get_precioPorNoche()?></td>
                 <td><?php echo $habitacion->get_totalValorConsumo();?></td>
+                <td colspan="6"><h7><a href="opciones.php">Opciones</a></h7></td>
             </tr>
 <?php } ?>
-            <tr>
-                <td colspan="6">Total Recaudado: <?php echo $mundo->get_caja()->get_valorRecaudado();?></td>
-            </tr>
-            <tr>
-                <td colspan="6">Total Pendiente: <?php echo $mundo->get_caja()->get_valorPendiente();?></td>
-            </tr>
+            
             <tr>
                 <td colspan="6"><h6><a href="logout.php">Salir</a></h6></td>
             </tr>
-            <tr>
-                
-            </tr>
-                
+                            
 	</tbody>
 </table>
 </body>
-<footer>
-    <?php include './caja.php';?>
-</footer>
 </html>
