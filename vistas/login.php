@@ -1,5 +1,7 @@
 <?php session_start();
-
+ include_once '../mundo/Hotel.php';
+$mundo= Hotel::get_isntancia();
+$listaHabitaciones=$mundo->get_habitaciones();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -27,13 +29,22 @@
                         <td>Total</td>                        
 		</tr>
 	</thead>
-	<tbody>	
- 		<tr>
-			<td colspan="6"><h6><a href="logout.php">Salir</a></h6></td>
-		</tr>	
-                <tr>
-                    
-                </tr>
+	<tbody>
+<?php for($i=0;$i<sizeof($listaHabitaciones);$i++){ $habitacion= new Habitacion(); $habitacion=$listaHabitaciones[$i]?>
+            <tr>
+                <td><?php echo $habitacion->get_numero();?></td>
+                <td><?php echo $habitacion->get_estado()?></td>
+                <td><?php echo $habitacion->get_tipo();?></td>
+                <td><?php echo $habitacion->get_precioPorNoche()?></td>
+                <td><?php echo $habitacion->get_totalValorConsumo();?></td>
+            </tr>
+<?php } ?>
+            <tr>
+                <td colspan="6"><h6><a href="logout.php">Salir</a></h6></td>
+            </tr>
+            <tr>
+                
+            </tr>
                 
 	</tbody>
 </table>

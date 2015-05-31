@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 include_once 'Caja.php';
-include_once 'datos/HabitacionDAO.php';
+include_once '../datos/HabitacionDAO.php';
 include_once 'datos/CajaDAO.php';
 include_once 'Habitacion.php';
 /**

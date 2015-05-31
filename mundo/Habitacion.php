@@ -5,9 +5,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-include_once 'datos/ConsumoDAO.php';
-include_once 'datos/ReservaDAO.php';
-include_once 'datos/HuespedDAO.php';
+include_once '../datos/ConsumoDAO.php';
+include_once '../datos/ReservaDAO.php';
+include_once '../datos/HuespedDAO.php';
 /**
  * Description of Habitacion
  *

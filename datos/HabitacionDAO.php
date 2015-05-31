@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 include_once 'FachadaDB.php';
-include_once 'mundo/Habitacion.php';
+include_once '../mundo/Habitacion.php';
 /**
  * Description of HabitacionDAO
  *
