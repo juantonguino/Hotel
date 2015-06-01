@@ -48,7 +48,7 @@ $listaHabitaciones=$mundo->get_habitaciones();
                 <td><?php echo $habitacion->get_tipo();?></td>
                 <td><?php echo $habitacion->get_precioPorNoche()?></td>
                 <td><?php echo $habitacion->get_totalValorConsumo();?></td>
-                <td colspan="6"><h7><a href="opciones.php">Opciones</a></h7></td>
+                <td colspan="6"><h7><a href="<?php echo "opciones.php?numero".$habitacion->get_numero();?>">Opciones</a></h7></td>
             </tr>
 <?php } ?>
             
