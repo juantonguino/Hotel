@@ -25,13 +25,20 @@ $listaHabitaciones=$mundo->get_habitaciones();
             <tr>
                 <td BGCOLOR="#D8D8D8" colspan="6">Total de Dinero Pendiente: <?php echo $mundo->get_caja()->get_valorPendiente();?></td>
             </tr>
+                <tr>
+                    <td colspan="6"></td>
+                </tr>
 		<tr>                        
                     <td><h8><a></a>Numero</h8></td>
                     <td><h8><a></a>Estado</h8></td>
 		    <td><h8><a></a>tipo</h8></td>
                     <td><h8><a></a>Precio</h8></td>
-                    <td><h8><a></a>Total</h8></td>  
+                    <td><h8><a></a>Total</h8></td> 
+                    <td><h8><a></a>Opciones</h8></td> 
 		</tr>
+                <tr>
+                    <td colspan="6"></td>
+                </tr>
 	</thead>
 	<tbody>
 <?php for($i=0;$i<sizeof($listaHabitaciones);$i++){ $habitacion=$listaHabitaciones[$i];?>
