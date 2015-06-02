@@ -148,7 +148,7 @@ class Hotel {
     public function buscarHabitacionPorNumero($numero){
         $retorno=null;
         $numeroH= sizeof($this->_habitaciones);
-        for($i=0;$i<$$numeroH;$i++){
+        for($i=0;$i<$numeroH;$i++){
             $temporal=  $this->_habitaciones[$i];
             if($temporal->get_numero()==$numero){
                 $retorno= $temporal;
