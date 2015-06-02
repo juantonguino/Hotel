@@ -44,6 +44,7 @@ $huespedes= $habitacion->get_huespedes();
                 <td><?php echo $huesped->get_direccion();?></td>
                 <td><?php echo $huesped->get_telefono();?></td>
                 <td><?php echo $huesped->get_numeroNohes();?></td>
+                <td><a href="#" onclick="confirmarHues(<?php echo $i;?>)"> X </a></td>
             </tr>
 <?php }?>
 		<tr>

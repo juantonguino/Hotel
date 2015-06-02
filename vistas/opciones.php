@@ -25,9 +25,9 @@ $numero=$_GET['numero'];
 	</thead>
 	<tbody>
 		<tr>
-			<td><a href="huespedes.php">Huespedes</a></td>
-                        <td><a href="consumos.php">Consumos</a></td>
-                        <td><a href="reservas.php">Reservas</a></td>
+			<td><a href="<?php echo "huespedes.php?numero=".$numero;?>">Huespedes</a></td>
+                        <td><a href="<?php echo "consumos.php?numero=".$numero;?>">Consumos</a></td>
+                        <td><a href="<?php echo "reservas.php?numero=".$numero;?>">Reservas</a></td>
 		</tr>
 		<tr>
                     <td colspan="3"><h6><a href="login.php">Regresar</a></h6></td>

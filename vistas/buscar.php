@@ -21,7 +21,7 @@
 		<tr>
 			<td><label for="mail">Reserva:</label></td>
                         <td><input type="email" name="mail" required></td>
-                        <td><h7><a href="reservas.php">Buscar</a></h7></td>
+                        <td colspan="2"><input type="submit" name="reserva" value="Buscar"></td>
             
 		</tr>
 		<tr>
@@ -31,8 +31,8 @@
             
 		</tr>
                 <tr>
-			<td><label for="con">Disponible:</label></td>
-                        <td><input type="password" name="con" required></td>
+			<td><label for="con">Disponibilidad:</label></td>
+                        <td><input type="date" name="con" required></td>
                         <td><h7><a href="login.php">Buscar</a></h7></td>
             
 		</tr>
