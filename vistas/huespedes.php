@@ -1,5 +1,12 @@
 <?php session_start();
-
+include_once '../mundo/Hotel.php';
+//$mundo= new Hotel();
+//$habitacion= new Habitacion();
+//$huesped= new Huesped();
+$numero= $_GET['numero'];
+$mundo= Hotel::get_isntancia();
+$habitacion=$mundo->buscarHabitacionPorNumero($numero);
+$huespedes= $habitacion->get_huespedes();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -29,8 +36,16 @@
 		</tr>
 	</thead>
 	<tbody>
-	
- 	
+<?php for($i=0;$i<sizeof($huespedes);$i++){ $huesped= $huespedes[$i];?>
+            <tr>
+                <td><?php echo $huesped->get_nombre();?></td>
+                <td><?php echo $huesped->get_edad();?></td>
+                <td><?php echo $huesped->get_documentoIdentificacion();?></td>
+                <td><?php echo $huesped->get_direccion();?></td>
+                <td><?php echo $huesped->get_telefono();?></td>
+                <td><?php echo $huesped->get_numeroNohes();?></td>
+            </tr>
+<?php }?>
 		<tr>
 			<td colspan="8"><h6><a href="login.php">Regresar</a></h6></td>
 		</tr>	

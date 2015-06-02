@@ -6,6 +6,7 @@
  * and open the template in the editor.
  */
 include_once 'FachadaDB.php';
+include_once '../mundo/Huesped.php';
 /**
  * Description of HuespedDAO
  *
