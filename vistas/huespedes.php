@@ -24,7 +24,7 @@ $huespedes= $habitacion->get_huespedes();
 			<th colspan="8"><i class="hues"></i> HUESPEDES</th>
 		</tr>
 		<tr>
-			<td colspan="8"><h6><a href="agregar_huesped.php">AGREGAR HUESPEDES</a></h6></td>
+                    <td colspan="8"><h6><a href="<?php echo "agregar_huesped.php?numero=".$numero;?>">AGREGAR HUESPEDES</a></h6></td>
 		</tr>
 		<tr>
 			<td>Nombre</td>

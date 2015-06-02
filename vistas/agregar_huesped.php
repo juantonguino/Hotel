@@ -1,14 +1,23 @@
 <?php session_start();
+include_once '../mundo/Huesped.php';
+include_once '../mundo/Hotel.php';
+//$mundo=new Hotel();
+$numero= $_GET['numero'];
+$mundo= Hotel::get_isntancia();
+
 if(isset($_POST['op']))
-	{
-		$mail=strtolower($_POST['mail']);
-		$contra=$_POST['con'];
-		$con=$_SESSION['cont'];
-		$_SESSION['email'][$con]=$mail;
-		$_SESSION['contra'][$con]=$contra;
-		$_SESSION['cont']++;
-		header("Location:login.php");
-	}
+{
+    $nombre=$_POST['nombre'];
+    $edad=$_POST['edad'];
+    $id=$_POST['id'];
+    $direccion=$_POST['direccion'];
+    $telefono=$_POST['telefono'];
+    $numeroNohes=$_POST['numeroNoches'];
+    $fecha=$_POST['fechaIngreso'];
+    $huesped=new Huesped($direccion, $id, $edad, $nombre, $numeroNohes, $telefono, $fecha);
+    $mundo->agregarHuesped($numero, $huesped);
+    header("Location:huespedes.php?numero=$numero");
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -29,27 +38,31 @@ if(isset($_POST['op']))
 	<tbody>
 		<tr>
 			<td><label for="mail">Nombre:</label></td>
-                        <td><input type="email" name="mail" required></td>
+                        <td><input type="text" name="nombre" required></td>
 		</tr>
 		<tr>
 			<td><label for="con">Edad:</label></td>
-                        <td><input type="password" name="con" required></td>
+                        <td><input type="text" name="edad" required></td>
 		</tr>
                 <tr>
 			<td><label for="con">Identificacion:</label></td>
-                        <td><input type="password" name="con" required></td>
+                        <td><input type="text" name="id" required></td>
 		</tr>
                 <tr>
 			<td><label for="con">Direccion:</label></td>
-                        <td><input type="password" name="con" required></td>
+                        <td><input type="text" name="direccion" required></td>
 		</tr>
                 <tr>
 			<td><label for="con">Telefono:</label></td>
-                        <td><input type="password" name="con" required></td>
+                        <td><input type="text" name="telefono" required></td>
 		</tr>
                 <tr>
 			<td><label for="con"># Noches:</label></td>
-                        <td><input type="password" name="con" required></td>
+                        <td><input type="text" name="numeroNoches" required></td>
+		</tr>
+                <tr>
+			<td><label for="con">Fecha Ingreso:</label></td>
+                        <td><input type="date" name="fechaIngreso" required></td>
 		</tr>
 		<tr>
 			<td colspan="2"><input type="submit" name="op" value="Agregar Huesped"></td>

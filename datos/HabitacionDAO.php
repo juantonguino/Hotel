@@ -52,7 +52,7 @@ class HabitacionDAO {
 
 
     public function actualizar(Habitacion $habitacion){
-        $sql="call actualizar_habitacion(".$habitacion->get_estado().",".$habitacion->get_numero().",".$habitacion->get_totalValorConsumo().")";
+        $sql="call actualizar_habitacion('".$habitacion->get_estado()."',".$habitacion->get_numero().",".$habitacion->get_totalValorConsumo().")";
         $this->fachadaDB->agregarModificarEliminar($sql);
     }
 }
