@@ -36,10 +36,6 @@ if(isset($_POST['op']))
 	</thead>
 	<tbody>
 		<tr>
-			<td><label for="mail">Fecha:</label></td>
-                        <td><input type="date" name="fecha" required></td>
-		</tr>
-		<tr>
 			<td><label for="con">Producto:</label></td>
                         <td><input type="text" name="producto" required></td>
 		</tr>
@@ -47,7 +43,10 @@ if(isset($_POST['op']))
 			<td><label for="con">Valor:</label></td>
                         <td><input type="text" name="valor" required></td>
 		</tr>
-                
+               <tr>
+			<td><label for="mail">Fecha:</label></td>
+                        <td><input type="date" name="fecha" required></td>
+		</tr> 
 		<tr>
 			<td colspan="2"><input type="submit" name="op" value="Agregar Consumo"></td>
 		</tr>

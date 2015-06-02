@@ -24,7 +24,7 @@ $reservas= $habitacion->get_reservas();
 			<th colspan="6"><i class="res"></i> RESERVAS</th>
 		</tr>
 		<tr>
-                    <td colspan="6"><h6><a href="agregar_reserva.php">AGREGAR RESERVA</a></h6></td>
+                    <td colspan="6"><h6><a href="<?php echo "agregar_reserva.php?numero=".$numero;?>">AGREGAR RESERVA</a></h6></td>
 		</tr>
 		<tr>
 			<td><h8><a></a>ID Cliente</h8></td>

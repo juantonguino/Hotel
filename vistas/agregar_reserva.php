@@ -1,6 +1,7 @@
 <?php session_start();
 if(isset($_POST['op']))
-	{
+{
+    
 		$mail=strtolower($_POST['mail']);
 		$contra=$_POST['con'];
 		$con=$_SESSION['cont'];
@@ -8,7 +9,7 @@ if(isset($_POST['op']))
 		$_SESSION['contra'][$con]=$contra;
 		$_SESSION['cont']++;
 		header("Location:login.php");
-	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -29,23 +30,19 @@ if(isset($_POST['op']))
 	<tbody>
 		<tr>
 			<td><label for="mail">ID Cliente:</label></td>
-                        <td><input type="email" name="mail" required></td>
+                        <td><input type="text" name="id" required></td>
 		</tr>
-		<tr>
-			<td><label for="con">Fecha:</label></td>
-                        <td><input type="password" name="con" required></td>
+                <tr>
+			<td><label for="con">Nombre:</label></td>
+                        <td><input type="text" name="nombre" required></td>
 		</tr>
                 <tr>
 			<td><label for="con"># Dias:</label></td>
-                        <td><input type="password" name="con" required></td>
+                        <td><input type="text" name="numeroDias" required></td>
 		</tr>
                 <tr>
-			<td><label for="con">Tipo Habitacion:</label></td>
-                        <td><input type="password" name="con" required></td>
-		</tr>
-                <tr>
-			<td><label for="con">Habitacion:</label></td>
-                        <td><input type="password" name="con" required></td>
+			<td><label for="con">Fecha:</label></td>
+                        <td><input type="date" name="fecha" required></td>
 		</tr>
 		<tr>
 			<td colspan="2"><input type="submit" name="op" value="Agregar Reserva"></td>
