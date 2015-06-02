@@ -44,6 +44,14 @@ h8
         padding: 5px 20px;
         color:#fff;
 }
+h9
+{
+	background:#333;
+	padding:5px;
+	color:#fff;
+        padding-left: 260px;
+        padding-right: 260px;
+}
 
 /* ---------- GENERAL ---------- */
 * {
