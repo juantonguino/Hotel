@@ -33,6 +33,7 @@ class ReservaDAO {
         $registros= $this->fachadaDB->consultar($sql);
         for($i=0;$i<$numeroRegistros;$i++){
             $reserva=  new Reserva($registros[$i]['fecha_estadia'], $registros[$i]['nombre'], $registros[$i]['numero_identificacion'], $registros[$i]['numero_dias']);
+            $reserva->set_fecahaEstadia($registros[$i]['fecha_estadia']);
             array_push($reservas, $reserva);
         }
         return $reservas;
