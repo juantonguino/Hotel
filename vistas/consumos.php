@@ -24,7 +24,7 @@ $consumos=$habitacion->get_consumos();
 			<th colspan="4"><i class="cons"></i> CONSUMOS</th>
 		</tr>
 		<tr>
-			<td colspan="4"><h6><a href="agregar_consumo.php">AGREGAR CONSUMOS</a></h6></td>
+                    <td colspan="4"><h6><a href="<?php echo "agregar_consumo.php?numero=".$numero;?>">AGREGAR CONSUMOS</a></h6></td>
 		</tr>
 		<tr>
 			<td><h8><a></a>Fecha</h8></td>

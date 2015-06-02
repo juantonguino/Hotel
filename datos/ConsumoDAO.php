@@ -39,7 +39,7 @@ class ConsumoDAO {
     }
     
     public function agregar($numeroHabitacion,  Consumo $consumo){
-        $sql="call agregar_consumo(".$consumo->get_fecha().",'".$consumo->get_producto()."',".$consumo->get_valor().",".$numeroHabitacion.")";;
+        $sql="call agregar_consumo('".$consumo->get_fecha()."','".$consumo->get_producto()."',".$consumo->get_valor().",".$numeroHabitacion.")";;
         $this->fachadaDB->agregarModificarEliminar($sql);
     }
     

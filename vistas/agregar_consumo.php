@@ -1,14 +1,22 @@
 <?php session_start();
+include_once '../mundo/Hotel.php';
+include_once '../mundo/Consumo.php';
+//$mundo=new Hotel();
+$numero= $_GET['numero'];
+$mundo= Hotel::get_isntancia();
+
 if(isset($_POST['op']))
-	{
-		$mail=strtolower($_POST['mail']);
-		$contra=$_POST['con'];
-		$con=$_SESSION['cont'];
-		$_SESSION['email'][$con]=$mail;
-		$_SESSION['contra'][$con]=$contra;
-		$_SESSION['cont']++;
-		header("Location:login.php");
-	}
+{
+    $fecha=$_POST['fecha'];
+    $producto=$_POST['producto'];
+    $valor=$_POST['valor'];
+    $consumo=new Consumo($fecha, $producto, $valor);
+    $mundo->agregarConsumo($numero, $consumo);
+    echo $fecha;
+    echo $producto;
+    echo $valor;
+    header("Location:consumos.php?numero=$numero");
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -29,15 +37,15 @@ if(isset($_POST['op']))
 	<tbody>
 		<tr>
 			<td><label for="mail">Fecha:</label></td>
-                        <td><input type="email" name="mail" required></td>
+                        <td><input type="date" name="fecha" required></td>
 		</tr>
 		<tr>
 			<td><label for="con">Producto:</label></td>
-                        <td><input type="password" name="con" required></td>
+                        <td><input type="text" name="producto" required></td>
 		</tr>
                 <tr>
 			<td><label for="con">Valor:</label></td>
-                        <td><input type="password" name="con" required></td>
+                        <td><input type="text" name="valor" required></td>
 		</tr>
                 
 		<tr>
