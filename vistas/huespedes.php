@@ -27,12 +27,12 @@ $huespedes= $habitacion->get_huespedes();
                     <td colspan="8"><h6><a href="<?php echo "agregar_huesped.php?numero=".$numero;?>">AGREGAR HUESPEDES</a></h6></td>
 		</tr>
 		<tr>
-			<td>Nombre</td>
-			<td>Edad</td>
-                        <td>Identificacion</td>
-                        <td>Direccion</td>
-                        <td>Telefono</td>
-                        <td># Noches</td>
+			<td><h8><a></a>Nombre</h8></td>
+                        <td><h8><a></a>Edad</h8></td>
+			<td><h8><a></a>Identificacion</h8></td>
+                        <td><h8><a></a>Direccion</h8></td>
+                        <td><h8><a></a>Telefono</h8></td>
+                        <td><h8><a></a>#Noches</h8></td>
 		</tr>
 	</thead>
 	<tbody>

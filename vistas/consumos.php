@@ -21,15 +21,15 @@ $consumos=$habitacion->get_consumos();
 <table>
 	<thead>
 		<tr>
-			<th colspan="5"><i class="cons"></i> CONSUMOS</th>
+			<th colspan="4"><i class="cons"></i> CONSUMOS</th>
 		</tr>
 		<tr>
-			<td colspan="5"><h6><a href="agregar_consumo.php">AGREGAR CONSUMOS</a></h6></td>
+			<td colspan="4"><h6><a href="agregar_consumo.php">AGREGAR CONSUMOS</a></h6></td>
 		</tr>
 		<tr>
-			<td>Fecha</td>
-			<td>Producto</td>
-                        <td>Valor</td>
+			<td><h8><a></a>Fecha</h8></td>
+                        <td><h8><a></a>Producto</h8></td>
+			<td><h8><a></a>Valor</h8></td>
 		</tr>
 	</thead>
 	<tbody>
@@ -41,7 +41,7 @@ $consumos=$habitacion->get_consumos();
             </tr>
 <?php }?>
 		<tr>
-			<td colspan="5"><h6><a href="login.php">Regresar</a></h6></td>
+			<td colspan="4"><h6><a href="login.php">Regresar</a></h6></td>
 		</tr>	
 	</tbody>
         

@@ -21,16 +21,16 @@ $reservas= $habitacion->get_reservas();
 <table>
 	<thead>
 		<tr>
-			<th colspan="7"><i class="res"></i> RESERVAS</th>
+			<th colspan="6"><i class="res"></i> RESERVAS</th>
 		</tr>
 		<tr>
-                    <td colspan="7"><h6><a href="agregar_reserva.php">AGREGAR RESERVA</a></h6></td>
+                    <td colspan="6"><h6><a href="agregar_reserva.php">AGREGAR RESERVA</a></h6></td>
 		</tr>
 		<tr>
-			<td>ID Cliente</td>
-			<td>Fecha</td>
-                        <td># Dias</td>
-                        <td>Nombres</td>
+			<td><h8><a></a>ID Cliente</h8></td>
+			<td><h8><a></a>Fecha</h8></td>
+                        <td><h8><a></a># Dias</h8></td>
+                        <td><h8><a></a>Nombres</h8></td>
 		</tr>
 	</thead>
 	<tbody>
@@ -44,7 +44,7 @@ $reservas= $habitacion->get_reservas();
 <?php }?>
  	
 		<tr>
-			<td colspan="7"><h6><a href="login.php">Regresar</a></h6></td>
+			<td colspan="6"><h6><a href="login.php">Regresar</a></h6></td>
 		</tr>	
 	</tbody>
         
