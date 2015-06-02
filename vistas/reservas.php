@@ -2,7 +2,7 @@
 include_once '../mundo/Hotel.php';
 //$mundo= new Hotel();
 //$habitacion= new Habitacion();
-$reserva= new Reserva();
+//$reserva= new Reserva();
 $numero= $_GET['numero'];
 $mundo= Hotel::get_isntancia();
 $habitacion=$mundo->buscarHabitacionPorNumero($numero);
