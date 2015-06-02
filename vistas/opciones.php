@@ -17,9 +17,9 @@ $numero=$_GET['numero'];
 			<th colspan="3"> HOTEL U-MARIANA </th>
 		</tr>
 		<tr>
-                    <td><a href="<?php echo "huespedes.php?numero".$numero;?>"><img src="../img/huespedes.jpg" height="100" width="100"></a></td>
-                    <td><a href="<?php echo "consumos.php?numero".$numero;?>"><img src="../img/consumos.jpg" height="100" width="100"></a></td>
-                    <td><a href="<?php echo "reservas.php?numero".$numero;?>"><img src="../img/reservas.jpg" height="100" width="100"></a></td>
+                    <td><a href="<?php echo "huespedes.php?numero=".$numero;?>"><img src="../img/huespedes.jpg" height="100" width="100"></a></td>
+                    <td><a href="<?php echo "consumos.php?numero=".$numero;?>"><img src="../img/consumos.jpg" height="100" width="100"></a></td>
+                    <td><a href="<?php echo "reservas.php?numero=".$numero;?>"><img src="../img/reservas.jpg" height="100" width="100"></a></td>
 			
 		</tr>
 	</thead>
