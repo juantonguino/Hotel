@@ -11,6 +11,8 @@ if(isset($_POST['op']))
     $verificacion=$usuarioDAO->verificarUsuarioRegistrado($mail, $contra);
     if($verificacion == 1)
     {                     
+        session_start();
+        $_SESSION['estado']=true;
         header('Location:vistas/login.php');
     }
     else
