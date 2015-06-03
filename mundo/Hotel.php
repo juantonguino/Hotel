@@ -104,7 +104,7 @@ class Hotel {
     
     public function agregarReserva($numeroHabitacion, $reserva){
         $habitacion= $this->buscarHabitacionPorNumero($numeroHabitacion);
-        $reservas=$habitacion.get_reservas();
+        $reservas=$habitacion->get_reservas();
         array_push($reservas, $reserva);
         $habitacion->get_reservaDAO()->agregar($numeroHabitacion, $reserva);
     }

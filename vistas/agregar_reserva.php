@@ -1,14 +1,20 @@
 <?php session_start();
+include_once '../mundo/Reserva.php';
+include_once '../mundo/Hotel.php';
+//$mundo=new Hotel();
+$numero= $_GET['numero'];
+$mundo= Hotel::get_isntancia();
+
 if(isset($_POST['op']))
 {
-    
-		$mail=strtolower($_POST['mail']);
-		$contra=$_POST['con'];
-		$con=$_SESSION['cont'];
-		$_SESSION['email'][$con]=$mail;
-		$_SESSION['contra'][$con]=$contra;
-		$_SESSION['cont']++;
-		header("Location:login.php");
+    $id=$_POST['id'];
+    $nombre=$_POST['nombre'];
+    $numeroDias=$_POST['numeroDias'];
+    $fecha=$_POST['fecha'];
+    $reserva= new Reserva($fecha, $nombre, $id, $numeroDias);
+    $reserva->set_fecahaEstadia($fecha);
+    $mundo->agregarReserva($numero, $reserva);
+    header("Location:reservas.php?numero=$numero");
 }
 ?>
 <!DOCTYPE html>
