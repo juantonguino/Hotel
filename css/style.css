@@ -220,11 +220,15 @@ td select {
   color: #282830;
   font-weight: bold;
   margin-top: 3px;
-  padding: 4px 47px;
+  padding: 4px 60px;
 }
 td select:hover {
   background: #dcdcdc;
 }
+td input[type="date"] {
+  padding: 0px 15px;
+}
+
 #login-form footer {
   font-size: 12px;
   margin-top: 16px;
