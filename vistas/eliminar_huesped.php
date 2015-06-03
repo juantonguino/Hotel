@@ -6,7 +6,7 @@ $id=$_GET['id'];
 //$mundo=new Hotel();
 $mundo= Hotel::get_isntancia();
 $mundo->eliminarHesped($numero, $id);
-header("Location:huespedes.php?numero=$numero")
+header("Location:huespedes.php?numero=$numero");
 
 ?>
 

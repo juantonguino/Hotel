@@ -218,12 +218,55 @@ class Hotel {
         $buscada=  $this->buscarHabitacionPorNumero($numeroHabitacion);
         if($buscada!=null){
             $listaHuespedes=$buscada->get_huespedes();
+            if(sizeof($listaHuespedes)==1){
+                $valorActual= $buscada->get_totalValorConsumo();
+                $valorQuitar= $buscada->get_precioPorNoche();
+                $buscada->set_totalValorConsumo($valorActual-$valorQuitar);
+                // actualizar habitacion
+                $this->_habitacionDAO->actualizar($buscada);
+                //caja
+                $valorActual=  $this->_caja->get_valorPendiente();
+                $valorQuitar= $buscada->get_precioPorNoche();
+                $this->_caja->set_valorPendiente($valorActual-$valorQuitar);
+                //actualizar caja
+                $this->_cajaDAO->actualizar($this->_caja);
+            }
             for($i=0;$i<sizeof($listaHuespedes);$i++){
                 $temporal= $listaHuespedes[$i];
                 if($temporal->get_documentoIdentificacion()==$idententificacion){
                     $buscada->get_huespedDAO()->borrar($buscada->get_numero(), $temporal);
                     unset($listaHuespedes[$i]);
                     $buscada->set_reservas(array_values($listaHuespedes));
+                }
+            }
+        }
+    }
+    
+    public function eliminarConsumo($numeroHabitacion, Consumo $consumo){
+        $buscada=  $this->buscarHabitacionPorNumero($numeroHabitacion);
+        if($buscada!=null){
+            $listaConsumos=$buscada->get_consumos();
+            for($i=0;$i<sizeof($listaConsumos);$i++){
+                $temporal= $listaConsumos[$i];
+                if($consumo->get_fecha()==$temporal->get_fecha()&&
+                   $consumo->get_producto()==$temporal->get_producto()&&
+                   $consumo->get_valor()==$temporal->get_valor()){
+                    
+                    $valorActual= $buscada->get_totalValorConsumo();
+                    $valorQuitar= $consumo->get_valor();
+                    $buscada->set_totalValorConsumo($valorActual-$valorQuitar);
+                    // actualiza la habitacion
+                    $this->_habitacionDAO->actualizar($buscada);
+                    //caja
+                    $valorActual= $this->_caja->get_valorPendiente();
+                    $valorQuitar= $consumo->get_valor();
+                    $this->_caja->set_valorPendiente($valorActual-$valorQuitar);
+                    //actualizar caja
+                    $this->_cajaDAO->actualizar($this->_caja);
+                    //eliminar consumo
+                    $buscada->get_consumoDAO()->borrar($buscada->get_numero(), $consumo);
+                    unset($listaConsumos[$i]);
+                    $buscada->set_reservas(array_values($listaConsumos));
                 }
             }
         }
