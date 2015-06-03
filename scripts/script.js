@@ -5,10 +5,10 @@ function confirmarHues(numero, id)
     else
         return false;
 }
-function confirmarRes(pos)
+function confirmarRes(numero,fecha,nombre,id,dias)
 {
     if(confirm("¿Desea borrar la Reserva?"))
-        location.href="eliminar_reserva.php?id="+pos;
+        location.href="eliminar_reserva.php?numero="+numero+"&fecha="+fecha+"&nombre="+nombre+"&id="+id+"&dias="+dias;
     else
         return false;
 }

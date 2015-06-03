@@ -40,7 +40,7 @@ $reservas= $habitacion->get_reservas();
                 <td><?php echo $reserva->get_fecahaEstadia();?></td>
                 <td><?php echo $reserva->get_numeroDias();?></td>
                 <td><?php echo $reserva->get_nombre();?></td>                
-                <td><a href="#" onclick="confirmarRes(<?php echo $numero;?>)"> X </a></td>
+                <td><a href="#" onclick="confirmarRes(<?php echo $numero?>,'<?php echo $reserva->get_fecahaEstadia();?>','<?php echo $reserva->get_nombre();?>',<?php echo $reserva->get_numeroIdentificacion();?>,<?php echo $reserva->get_numeroDias();?>)"> X </a></td>
             </tr>
 <?php }?>
  	
