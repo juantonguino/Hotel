@@ -38,7 +38,7 @@ $consumos=$habitacion->get_consumos();
                 <td><?php echo $consumo->get_fecha();?></td>
                 <td><?php echo $consumo->get_producto();?></td>
                 <td><?php echo $consumo->get_valor();?></td>
-                <td><a href="#" onclick="confirmarCon(<?php echo $i;?>)"> X </a></td>
+                <td><a href="#" onclick="confirmarCon(<?php echo $numero;?>, <?php echo $consumo->get_fecha();?>, <?php echo $consumo->get_producto();?>, <?php echo $consumo->get_valor();?>)"> X </a></td>
             </tr>
 <?php }?>
 		<tr>
