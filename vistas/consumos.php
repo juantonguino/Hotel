@@ -41,8 +41,15 @@ $consumos=$habitacion->get_consumos();
                 <td><a href="#" onclick="confirmarCon(<?php echo $numero;?>, '<?php echo $consumo->get_fecha();?>', '<?php echo $consumo->get_producto();?>',<?php echo $consumo->get_valor();?>)"> X </a></td>
             </tr>
 <?php }?>
-		<tr>
-			<td colspan="4"><h6><a href="login.php">Regresar</a></h6></td>
+	<tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="8"><h9><a href="<?php echo "opciones.php?numero=".$habitacion->get_numero();?>">Regresar</a></h9></td>
+            
+            </tr>	
+            <tr>
+			<td colspan="4"><h6><a href="login.php">HABITACIONES</a></h6></td>
 		</tr>	
 	</tbody>
         

@@ -44,8 +44,15 @@ $reservas= $habitacion->get_reservas();
             </tr>
 <?php }?>
  	
-		<tr>
-			<td colspan="6"><h6><a href="login.php">Regresar</a></h6></td>
+	<tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="8"><h9><a href="<?php echo "opciones.php?numero=".$habitacion->get_numero();?>">Regresar</a></h9></td>
+            
+            </tr>	
+            <tr>
+			<td colspan="6"><h6><a href="login.php">HABITACIONES</a></h6></td>
 		</tr>	
 	</tbody>
         
