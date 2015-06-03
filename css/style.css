@@ -21,7 +21,11 @@ table thead th
     color:#f8f8f8;
 }
 
-
+table tfoot th
+{
+    background-color:#333;
+    color:#f8f8f8;
+}
 
 h6
 {
