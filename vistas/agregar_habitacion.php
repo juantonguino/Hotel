@@ -1,4 +1,7 @@
 <?php session_start();
+if(!isset($_SESSION['estado'])){
+    header('Location:../index.php');
+}
 if(isset($_POST['op']))
 	{
 		$mail=strtolower($_POST['mail']);

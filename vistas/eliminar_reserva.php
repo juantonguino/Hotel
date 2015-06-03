@@ -1,5 +1,7 @@
-<?php
-session_start();
+<?php session_start();
+if(!isset($_SESSION['estado'])){
+    header('Location:../index.php');
+}
 include_once '../mundo/Reserva.php';
 include_once '../mundo/Hotel.php';
 $numero=$_GET['numero'];

@@ -1,5 +1,7 @@
-<?php 
-session_start();
+<?php session_start();
+if(!isset($_SESSION['estado'])){
+    header('Location:../index.php');
+}
 $numero=$_GET['numero'];
 ?>
 <!DOCTYPE html>

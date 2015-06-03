@@ -1,4 +1,7 @@
-<?php
+<?php session_start();
+if(!isset($_SESSION['estado'])){
+    header('Location:../index.php');
+}
 
 /* 
  * To change this license header, choose License Headers in Project Properties.

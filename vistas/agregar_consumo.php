@@ -1,4 +1,7 @@
 <?php session_start();
+if(!isset($_SESSION['estado'])){
+    header('Location:../index.php');
+}
 include_once '../mundo/Hotel.php';
 include_once '../mundo/Consumo.php';
 //$mundo=new Hotel();
