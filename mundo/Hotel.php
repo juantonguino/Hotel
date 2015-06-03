@@ -199,13 +199,13 @@ class Hotel {
         }
     }
     
-    public function buscarReserva($nombre, Reserva $miReserva){
+    public function buscarReserva($nombre){
         $retorno=array();
         for($i=0;$i<sizeof($this->_habitaciones);$i++){
             $miHabitacion=$this->_habitaciones[$i];
             $reservas=$miHabitacion->get_reservas();
-            for($j=0;$j<sizeof($this->_habitaciones);$j++){
-                $miReserva=$reservas[j];
+            for($j=0;$j<sizeof($reservas);$j++){
+                $miReserva=$reservas[$j];
                 if($miReserva->get_nombre()==$nombre){
                     array_push($retorno, $miHabitacion);
                 }
@@ -244,7 +244,7 @@ class Hotel {
        return $retorno;
     }
     
-    public function bucarHabitacionPorDisponibilidad($fecha){
+    public function buscarHabitacionPorDisponibilidad($fecha){
         $retorno=array();
         $habitacionesNmero=$this->_habitacionDAO->seleccionarHabitacionesDisponibles($fecha);
         for($i=0;$i<sizeof($habitacionesNmero);$i++){
