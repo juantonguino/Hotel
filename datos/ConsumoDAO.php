@@ -44,7 +44,7 @@ class ConsumoDAO {
     }
     
     public function borrar($numeroHabitacion, Consumo $consumo){
-        $sql="call borrar_consumo(".$consumo->get_fecha().",'".$consumo->get_producto()."',".$consumo->get_valor().",".$numeroHabitacion.")";
+        $sql="call borrar_consumo('".$consumo->get_fecha()."','".$consumo->get_producto()."',".$consumo->get_valor().",".$numeroHabitacion.")";
         $this->fachadaDB->agregarModificarEliminar($sql);
     }
 }
