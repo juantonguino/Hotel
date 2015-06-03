@@ -12,7 +12,7 @@ $reserva->set_fecahaEstadia($fecha);
 //$mundo= new Hotel();
 $mundo= Hotel::get_isntancia();
 $mundo->eliminarReserva($numero, $reserva);
-//header("Location:reservas.php")
+header("Location:reservas.php?numero=$numero");
 
 ?>
 
