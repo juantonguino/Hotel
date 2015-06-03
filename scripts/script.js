@@ -1,7 +1,7 @@
-function confirmarHues(pos)
+function confirmarHues(numero, id)
 {
     if(confirm("¿Desea borrar el Huesped?"))
-        location.href="eliminar_huesped.php?id="+pos;
+        location.href="eliminar_huesped.php?numero="+numero+"&id="+id;
     else
         return false;
 }

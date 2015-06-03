@@ -1,13 +1,12 @@
 <?php
 session_start();
+include_once '../mundo/Hotel.php';
+$numero=$_GET['numero'];
 $id=$_GET['id'];
-for($i=$id;$i<=$_SESSION['cont'];$i++)
-{
-   $_SESSION['email'][$i]=$_SESSION['email'][$i+1];
-   $_SESSION['contra'][$i]=$_SESSION['contra'][$i+1];
-}
-$_SESSION['cont']--;
-header("Location:huespedes.php")
+//$mundo=new Hotel();
+$mundo= Hotel::get_isntancia();
+$mundo->eliminarHesped($numero, $id);
+header("Location:huespedes.php?numero=$numero")
 
 ?>
 
