@@ -20,10 +20,10 @@ $listaHabitaciones=$mundo->get_habitaciones();
 			<th colspan="6"><i class="hab"></i>HABITACIONES</th>
 		</tr>
 		<tr>
-                <td BGCOLOR="#D8D8D8" colspan="6">Total de Dinero Recaudado: <?php echo $mundo->get_caja()->get_valorRecaudado();?></td>
+                <td BGCOLOR="#D8D8D8" colspan="6"><h10>Total de Dinero Recaudado: <?php echo $mundo->get_caja()->get_valorRecaudado();?></h10></td>
             </tr>
             <tr>
-                <td BGCOLOR="#D8D8D8" colspan="6">Total de Dinero Pendiente: <?php echo $mundo->get_caja()->get_valorPendiente();?></td>
+                <td BGCOLOR="#D8D8D8" colspan="6"><h10>Total de Dinero Pendiente: <?php echo $mundo->get_caja()->get_valorPendiente();?></10></td>
             </tr>
                 <tr>
                     <td colspan="6"></td>

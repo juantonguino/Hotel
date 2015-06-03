@@ -57,6 +57,10 @@ h9
         padding-left: 260px;
         padding-right: 260px;
 }
+h10
+{
+    color: #282830;
+}
 
 /* ---------- GENERAL ---------- */
 * {
@@ -198,12 +202,12 @@ input[type="submit"] {
 }
 
 td input[type="submit"] {
-  background: #999;
+  background: #848484;
   border-radius: 5px;
   color: #fff;
   font-weight: bold;
   margin-top: 3px;
-  padding: 2px 20px;
+  padding: 2px 40px;
 }
 
 td input[type="submit"]:hover {
