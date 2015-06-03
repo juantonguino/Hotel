@@ -216,7 +216,10 @@ td select {
   color: #282830;
   font-weight: bold;
   margin-top: 3px;
-  padding: 2px 47px;
+  padding: 4px 47px;
+}
+td select:hover {
+  background: #dcdcdc;
 }
 #login-form footer {
   font-size: 12px;
