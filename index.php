@@ -45,7 +45,7 @@ and open the template in the editor.
         <input name="con" type="password" required  placeholder="Contraseña">
         <input type="submit" name="op" value="Entrar">
         <footer class="clearfix">            
-          <p><span class="info">?</span><a href="#">Olvid&oacute; su contrase&ntilde;a?</a></p>
+          <p><span class="info">¿</span><a href="#">Olvid&oacute; su contrase&ntilde;a?</a></p>
 		  <p style="color:red;"><?php echo $error;?></p>
           
         </footer>

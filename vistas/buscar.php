@@ -21,25 +21,25 @@
 		<tr>
 			<td><label for="mail">Reserva:</label></td>
                         <td><input type="email" name="mail" required></td>
-                        <td colspan="2"><input type="submit" name="reserva" value="Buscar"></td>
+                        <td ><input type="submit" name="reserva" value="Buscar"></td>
             
 		</tr>
 		<tr>
 			<td><label for="con">Huesped:</label></td>
                         <td><input type="password" name="con" required></td>
-                        <td><h7><a href="huespedes.php">Buscar</a></h7></td>
+                        <td ><input type="submit" name="huesped" value="Buscar"></td>
             
 		</tr>
                 <tr>
 			<td><label for="con">Disponibilidad:</label></td>
                         <td><input type="date" name="con" required></td>
-                        <td><h7><a href="login.php">Buscar</a></h7></td>
+                        <td ><input type="submit" name="dispon" value="Buscar"></td>
             
 		</tr>
                 <tr>
 			<td><label for="con">Tipo de Habitacion:</label></td>
                         <td><input type="password" name="con" required></td>
-                        <td><h7><a href="login.php">Buscar</a></h7></td>
+                        <td ><input type="submit" name="tipoHab" value="Buscar"></td>
             
 		</tr>
                
