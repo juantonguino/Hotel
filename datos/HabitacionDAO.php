@@ -41,7 +41,7 @@ class HabitacionDAO {
     public function seleccionarHabitacionesDisponibles($fecha){
         $habitacionesNumero= array();
         $sql="SELECT * FROM habitacion WHERE
-        NOT habitacion.numero= (SELECT habitacion.numero FROM habitacion, reserva WHERE 
+        habitacion.numero not in (SELECT habitacion.numero FROM habitacion, reserva WHERE 
         ('".$fecha."' BETWEEN reserva.fecha_estadia and DATE_ADD(reserva.fecha_estadia, INTERVAL reserva.numero_dias DAY))
         and reserva.habitacion_numero=habitacion.numero);";
         $numeroRegistros=$this->fachadaDB->consultaNumeroRegistros($sql);
