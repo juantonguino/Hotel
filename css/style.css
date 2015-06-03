@@ -208,7 +208,16 @@ td input[type="submit"] {
 
 td input[type="submit"]:hover {
   background: #333;
+}
 
+td select {
+  background: #eaeaea;
+  border-radius: 5px;
+  color: #282830;
+  font-weight: bold;
+  margin-top: 3px;
+  padding: 2px 47px;
+}
 #login-form footer {
   font-size: 12px;
   margin-top: 16px;
