@@ -222,6 +222,7 @@ class Hotel {
                 $valorActual= $buscada->get_totalValorConsumo();
                 $valorQuitar= $buscada->get_precioPorNoche();
                 $buscada->set_totalValorConsumo($valorActual-$valorQuitar);
+                $buscada->set_estado(Habitacion::ESTADO_DISPONIBLE);
                 // actualizar habitacion
                 $this->_habitacionDAO->actualizar($buscada);
                 //caja
