@@ -19,3 +19,9 @@ function confirmarCon(numero, fecha, producto, valor)
     else
         return false;
 }
+function confirmarCheckOut(numero){
+    if(confirm("¿Desea realizar CheckOut?"))
+        location.href="checkout.php?numero="+numero;
+    else
+        return false;
+}

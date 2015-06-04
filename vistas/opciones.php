@@ -11,6 +11,7 @@ $numero=$_GET['numero'];
   <title>HOTEL U-MARIANA</title>
     <link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <script src="../scripts/script.js"></script> 
 </head>
 <body>
 <table>
@@ -22,16 +23,16 @@ $numero=$_GET['numero'];
                     <td><a href="<?php echo "huespedes.php?numero=".$numero;?>"><img src="../img/huespedes.jpg" height="100" width="100"></a></td>
                     <td><a href="<?php echo "consumos.php?numero=".$numero;?>"><img src="../img/consumos.jpg" height="100" width="100"></a></td>
                     <td><a href="<?php echo "reservas.php?numero=".$numero;?>"><img src="../img/reservas.jpg" height="100" width="100"></a></td>
-                    <td><a href="<?php echo "checkout.php?numero=".$numero;?>"><img src="../img/checkout.png" height="100" width="100"></a></td>
+                    <td><a href="#" onclick="confirmarCheckOut(<?php echo $numero;?>)"><img src="../img/checkout.png" height="100" width="100"></a></td>
 			
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td><a href="<?php echo "huespedes.php?numero=".$numero;?>">Huespedes</a></td>
-                        <td><a href="<?php echo "consumos.php?numero=".$numero;?>">Consumos</a></td>
-                        <td><a href="<?php echo "reservas.php?numero=".$numero;?>">Reservas</a></td>
-                        <td><a href="<?php echo "checkout.php?numero=".$numero;?>">check-out</a></td>
+                    <td><a href="<?php echo "huespedes.php?numero=".$numero;?>">Huespedes</a></td>
+                    <td><a href="<?php echo "consumos.php?numero=".$numero;?>">Consumos</a></td>
+                    <td><a href="<?php echo "reservas.php?numero=".$numero;?>">Reservas</a></td>
+                    <td><a href="#" onclick="confirmarCheckOut(<?php echo $numero;?>)">check-out</a></td>
 		</tr>
 		<tr>
                     <td colspan="4"><h6><a href="login.php">Regresar</a></h6></td>
